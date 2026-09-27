@@ -1,0 +1,597 @@
+/* GENERAL STYLES */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #222222;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button,
+a {
+    font-family: inherit;
+}
+
+
+/* NAVIGATION BAR */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 60px;
+    background-color: #222222;
+}
+
+.logo {
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #8cc8ff;
+}
+
+
+/* HOME PAGE */
+
+.home {
+    padding: 80px 60px;
+    text-align: center;
+}
+
+.home h1 {
+    margin-bottom: 15px;
+    font-size: 42px;
+}
+
+
+/* CARDS PAGE */
+
+.cards-page {
+    padding: 50px 60px;
+}
+
+.cards-page h1 {
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+.cards-container {
+    display: flex;
+    align-items: stretch;
+    gap: 25px;
+}
+
+.card {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.card-content {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 20px;
+}
+
+.card-content h2 {
+    margin-top: 0;
+}
+
+.card-content p {
+    line-height: 1.5;
+}
+
+.card-content button {
+    margin-top: auto;
+    padding: 10px 18px;
+
+    color: white;
+    background-color: #222222;
+
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+
+    transition: background-color 0.3s;
+}
+
+.card-content button:hover {
+    background-color: #497da8;
+}
+
+
+/* GRID LAYOUT PAGE= */
+/* =========================
+   GRID LAYOUT PAGE
+========================= */
+
+.grid-layout {
+    min-height: calc(100vh - 72px);
+
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: auto 1fr auto;
+
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+}
+
+.grid-header {
+    grid-area: header;
+
+    padding: 30px;
+    text-align: center;
+
+    color: white;
+    background-color: #497da8;
+}
+
+.grid-header h1 {
+    margin: 0 0 10px;
+}
+
+.grid-header p {
+    margin: 0;
+}
+
+.grid-sidebar {
+    grid-area: sidebar;
+
+    padding: 30px;
+    background-color: #dceaf5;
+}
+
+.grid-sidebar h2 {
+    margin-top: 0;
+}
+
+.grid-sidebar ul {
+    padding-left: 20px;
+    line-height: 2;
+}
+
+.grid-main {
+    grid-area: main;
+
+    padding: 40px;
+    background-color: white;
+}
+
+.grid-main h2 {
+    margin-top: 0;
+}
+
+.grid-main p {
+    line-height: 1.6;
+}
+
+.main-introduction {
+    margin-bottom: 30px;
+    color: #555555;
+}
+
+.project-summary,
+.project-progress,
+.next-task {
+    margin-bottom: 25px;
+    padding: 20px;
+
+    background-color: #f5f7fa;
+    border-left: 4px solid #497da8;
+    border-radius: 6px;
+}
+
+.project-summary h3,
+.project-progress h3,
+.next-task h3 {
+    margin-top: 0;
+}
+
+.project-progress ul {
+    padding-left: 20px;
+    line-height: 1.8;
+}
+
+.dashboard-button {
+    display: inline-block;
+
+    margin-top: 10px;
+    padding: 10px 18px;
+
+    color: white;
+    background-color: #497da8;
+
+    text-decoration: none;
+    border-radius: 6px;
+
+    transition: background-color 0.3s;
+}
+
+.dashboard-button:hover {
+    background-color: #315f85;
+}
+
+.grid-footer {
+    grid-area: footer;
+
+    padding: 20px;
+    text-align: center;
+
+    color: white;
+    background-color: #222222;
+}
+
+.grid-footer p {
+    margin: 0;
+}
+
+
+
+/* GALLERY PAGE */
+
+
+.gallery-page {
+    padding: 50px 60px;
+}
+
+.gallery-heading {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    text-align: center;
+}
+
+.gallery-heading h1 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 40px;
+}
+
+.gallery-heading p {
+    color: #555555;
+    line-height: 1.6;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+
+    height: 260px;
+    margin: 0;
+
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: #dddddd;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    transition: transform 0.4s;
+}
+
+.gallery-item figcaption {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    padding: 20px;
+
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+
+    background-color: rgba(0, 0, 0, 0.7);
+
+    opacity: 0;
+    transform: translateY(100%);
+
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+.gallery-item:hover figcaption {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.gallery-footer {
+    padding: 20px;
+
+    color: white;
+    background-color: #222222;
+
+    text-align: center;
+}
+
+.gallery-footer p {
+    margin: 0;
+}
+
+
+/* PORTFOLIO PAGE*/
+
+.portfolio-hero {
+    padding: 70px 60px;
+
+    color: white;
+    background-color: #497da8;
+}
+
+.portfolio-hero h1 {
+    max-width: 700px;
+    margin: 10px 0 20px;
+
+    font-size: 48px;
+}
+
+.portfolio-hero > p:last-child {
+    max-width: 700px;
+    margin-bottom: 0;
+
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.portfolio-label {
+    margin: 0;
+
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.portfolio-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px;
+}
+
+.projects h2,
+.portfolio-sidebar h2 {
+    margin-top: 0;
+}
+
+.projects-list {
+    display: grid;
+    gap: 25px;
+}
+
+.project-card {
+    min-height: 280px;
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background-color: white;
+    border-radius: 10px;
+    border-top: 5px solid #497da8;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.project-card h3 {
+    margin-top: 8px;
+    margin-bottom: 15px;
+
+    font-size: 24px;
+}
+
+.project-card p {
+    line-height: 1.6;
+}
+
+.project-number {
+    margin: 0;
+
+    color: #497da8;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.project-card button {
+    align-self: flex-start;
+
+    padding: 10px 18px;
+
+    color: white;
+    background-color: #222222;
+
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+
+    transition: background-color 0.3s;
+}
+
+.project-card button:hover {
+    background-color: #497da8;
+}
+
+.portfolio-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.about-section,
+.skills-section,
+.contact-section {
+    padding: 25px;
+
+    background-color: white;
+    border-radius: 10px;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+}
+
+.about-section p,
+.contact-section p {
+    line-height: 1.6;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    padding: 0;
+    list-style: none;
+}
+
+.skills-list li {
+    padding: 8px 12px;
+
+    color: #315f85;
+    background-color: #dceaf5;
+
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.portfolio-footer {
+    padding: 25px;
+
+    color: white;
+    background-color: #222222;
+
+    text-align: center;
+}
+
+.portfolio-footer p {
+    margin: 0;
+}
+
+
+/* RESPONSIVE DESIGN*/
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .home {
+        padding: 50px 20px;
+    }
+
+    .cards-page {
+        padding: 30px 20px;
+    }
+
+    .cards-container {
+        flex-direction: column;
+    }
+
+        /* Grid Layout */
+    .grid-layout {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr auto;
+
+        grid-template-areas:
+            "header"
+            "sidebar"
+            "main"
+            "footer";
+    }
+
+    .grid-sidebar,
+    .grid-main {
+        padding: 25px 20px;
+    }
+
+        /* Gallery */
+    .gallery-page {
+        padding: 30px 20px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-heading h1 {
+        font-size: 32px;
+    }
+}
